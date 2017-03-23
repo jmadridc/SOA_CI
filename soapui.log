@@ -1,0 +1,12 @@
+2017-03-23 19:34:48,134 WARN  [SoapUI] Missing folder [D:\JDeveloper\mywork\CIforSOADemo\.\ext] for external libraries
+2017-03-23 19:34:48,311 INFO  [DefaultSoapUICore] initialized soapui-settings from [C:\Users\jamadrid\soapui-settings.xml]
+2017-03-23 19:34:49,109 INFO  [WsdlProject] Loaded project from [file:/D:/JDeveloper/mywork/CIforSOADemo/Approval/SoapUITests/SCA-CI-Test-soapui-project.xml]
+2017-03-23 19:34:49,127 WARN  [WsdlProject] Project 'SCA_CI_Test' is from a newer version (5.3.0) of soapUI than this (4.0.0) and parts of it may be incompatible or incorrect. Saving this project with this version of soapUI may cause it to function differently.
+2017-03-23 19:34:49,329 INFO  [SoapUITestCaseRunner] Running soapUI tests in project [SCA_CI_Test]
+2017-03-23 19:34:49,333 INFO  [SoapUITestCaseRunner] Running Project [SCA_CI_Test], runType = SEQUENTIAL
+2017-03-23 19:34:49,348 INFO  [SoapUITestCaseRunner] Running soapUI testcase [TestCase 1]
+2017-03-23 19:34:49,378 INFO  [SoapUITestCaseRunner] running step [process - Request 1]
+2017-03-23 19:34:49,702 INFO  [SoapUITestCaseRunner] Assertion [SOAP Response] has status VALID
+2017-03-23 19:34:49,705 INFO  [SoapUITestCaseRunner] Assertion [Contains] has status VALID
+2017-03-23 19:34:49,707 INFO  [SoapUITestCaseRunner] Finished running soapUI testcase [TestCase 1], time taken: 314ms, status: FINISHED
+2017-03-23 19:34:49,714 INFO  [SoapUITestCaseRunner] Project [SCA_CI_Test] finished with status [FINISHED] in 376ms

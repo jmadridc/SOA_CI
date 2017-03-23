@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="17aa3d03-1511-4c1a-a75d-033ba50e6f34" activeEnvironment="Default" name="SCA_CI_Test" resourceRoot="" soapui-version="5.3.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="3f97a87a-3276-41c8-b05d-44eadf01c152" wsaVersion="NONE" name="HelloWorldBinding" type="wsdl" bindingName="{http://xmlns.oracle.com/CIforSOADemo/Approval/HelloWorld}HelloWorldBinding" soapVersion="1_1" anonymous="optional" definition="http://JAMADRID-ES.es.oracle.com:7101/soa-infra/services/default/Approval/helloworld_client_ep?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://JAMADRID-ES.es.oracle.com:7101/soa-infra/services/default/Approval/helloworld_client_ep?WSDL"><con:part><con:url>http://JAMADRID-ES.es.oracle.com:7101/soa-infra/services/default/Approval/helloworld_client_ep?WSDL</con:url><con:content><![CDATA[<wsdl:definitions name="HelloWorld" targetNamespace="http://xmlns.oracle.com/CIforSOADemo/Approval/HelloWorld" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://xmlns.oracle.com/CIforSOADemo/Approval/HelloWorld" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:documentation>
+    <abstractWSDL>http://JAMADRID-ES.es.oracle.com:7101/soa-infra/services/default/Approval!1.0-SNAPSHOT/WSDLs/HelloWorld.wsdl</abstractWSDL>
+  </wsdl:documentation>
+  <plnk:partnerLinkType name="HelloWorld">
+    <plnk:role name="HelloWorldProvider" portType="client:HelloWorld"/>
+  </plnk:partnerLinkType>
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://xmlns.oracle.com/CIforSOADemo/Approval/HelloWorld" schemaLocation="http://JAMADRID-ES.es.oracle.com:7101/soa-infra/services/default/Approval/helloworld_client_ep?XSD=../Schemas/HelloWorld.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldRequestMessage">
+    <wsdl:part name="payload" element="client:process"/>
+  </wsdl:message>
+  <wsdl:message name="HelloWorldResponseMessage">
+    <wsdl:part name="payload" element="client:processResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="HelloWorld">
+    <wsdl:operation name="process">
+      <wsdl:input message="client:HelloWorldRequestMessage"/>
+      <wsdl:output message="client:HelloWorldResponseMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HelloWorldBinding" type="client:HelloWorld">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="process">
+      <soap:operation style="document" soapAction="process"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="helloworld_client_ep">
+    <wsdl:port name="HelloWorld_pt" binding="client:HelloWorldBinding">
+      <soap:address location="http://JAMADRID-ES.es.oracle.com:7101/soa-infra/services/default/Approval/helloworld_client_ep"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://JAMADRID-ES.es.oracle.com:7101/soa-infra/services/default/Approval/helloworld_client_ep?XSD=../Schemas/HelloWorld.xsd</con:url><con:content><![CDATA[<schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/CIforSOADemo/Approval/HelloWorld" xmlns="http://www.w3.org/2001/XMLSchema">
+  <element name="process">
+    <complexType>
+      <sequence>
+        <element name="input" type="string"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="processResponse">
+    <complexType>
+      <sequence>
+        <element name="result" type="string"/>
+      </sequence>
+    </complexType>
+  </element>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://JAMADRID-ES.es.oracle.com:7101/soa-infra/services/default/Approval/helloworld_client_ep</con:endpoint></con:endpoints><con:operation id="76f2629a-e050-422b-b161-0996c43b4ad7" isOneWay="false" action="process" name="process" bindingOperationName="process" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b6423bc6-90e6-4378-82ff-cb63eab2fb71" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://JAMADRID-ES.es.oracle.com:7101/soa-infra/services/default/Approval/helloworld_client_ep</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hel="http://xmlns.oracle.com/CIforSOADemo/Approval/HelloWorld">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <hel:process>\r
+         <hel:input>Hello</hel:input>\r
+      </hel:process>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="process"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="dbd60197-b0f5-4219-ae0b-b4f1c0b1f59f" name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="1c5afff6-4686-4695-8f97-74d26c9b49c1" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="request" id="b5148382-087d-4b95-bcf5-970fc8eb0c6b" name="process - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HelloWorldBinding</con:interface><con:operation>process</con:operation><con:request name="process - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="4595ea2c-be3e-4003-8fd6-74d2eea36038"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://JAMADRID-ES.es.oracle.com:7101/soa-infra/services/default/Approval/helloworld_client_ep</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hel="http://xmlns.oracle.com/CIforSOADemo/Approval/HelloWorld">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <hel:process>\r
+         <hel:input>Hello</hel:input>\r
+      </hel:process>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="a2070601-4184-4474-86a9-516181862c74" name="SOAP Response"/><con:assertion type="Simple Contains" id="ef990f06-d2d1-4c20-a76c-6ef5630b1c74" name="Contains"><con:configuration><token>Hello</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="process"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

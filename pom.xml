@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.oracle</groupId>
   <artifactId>CIforSOADemo</artifactId>
@@ -8,31 +9,25 @@
   <modules>
     <!-- Add project modules -->
     <module>Approval</module>
-  </modules>  
-    <scm>
-        <connection>scm:git:https://github.com/jmadridc/SOA_CI.git</connection>
-        <url>https://github.com/jmadridc/SOA_CI.git</url>
-        <developerConnection>scm:git:https://github.com/jmadridc/SOA_CI.git</developerConnection>
-        <tag>CIforSOADemo-1.0</tag>
-    </scm>
-    <developers>
-        <developer>
-            <name>Javier Madrid</name>
-            <email>javier.luciano.madrid@oracle.com</email>
-        </developer>
-    </developers>
-  <distributionManagement>
-    <repository>      
-      <uniqueVersion>false</uniqueVersion>
-      <id>releases</id>
-      <url>http://localhost:8081/repository/maven-releases/</url>
-    </repository>
-    <snapshotRepository>
-      <uniqueVersion>false</uniqueVersion>
-      <id>snapshots</id>
-      <url>http://localhost:8081/repository/maven-snapshots/</url>
-    </snapshotRepository>
-  </distributionManagement>
+  </modules>
+  <scm>
+    <connection>scm:git:https://github.com/jmadridc/SOA_CI.git</connection>
+    <url>https://github.com/jmadridc/SOA_CI.git</url>
+    <developerConnection>scm:git:https://github.com/jmadridc/SOA_CI.git</developerConnection>
+    <tag>CIforSOADemo-1.0</tag>
+  </scm>
+  <developers>
+    <developer>
+      <name>Javier Madrid</name>
+      <email>javier.luciano.madrid@oracle.com</email>
+    </developer>
+  </developers>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>eviwarePluginRepository</id>
+      <url>http://www.soapui.org/repository/maven2/</url>
+    </pluginRepository>
+  </pluginRepositories>
   <build>
     <plugins>
       <plugin>
@@ -44,13 +39,12 @@
             <phase>verify</phase>
             <configuration>
               <target>
-                <property name="jndi.properties.input" value="${basedir}/Approval/jndi.properties" />
-                <property name="scatest.input" value="Approval" />
-                <property name="scatest.format" value="junit" />
-                <property name="scatest.result" value="reports" />
-                <ant antfile="${env.ORACLE_HOME}/soa/bin/ant-sca-test.xml"
-                     dir="${env.ORACLE_HOME}/soa/bin"
-                     target="test" />
+                <property name="jndi.properties.input" value="${basedir}/Approval/jndi.properties"/>
+                <property name="scatest.input" value="Approval"/>
+                <property name="scatest.format" value="junit"/>
+                <property name="scatest.result" value="reports"/>
+                <ant antfile="${env.ORACLE_HOME}/soa/bin/ant-sca-test.xml" dir="${env.ORACLE_HOME}/soa/bin"
+                     target="test"/>
               </target>
             </configuration>
             <goals>
@@ -59,6 +53,38 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>eviware</groupId>
+        <artifactId>maven-soapui-plugin</artifactId>
+        <version>4.0.0</version>
+        <configuration>
+          <projectFile>${basedir}/Approval/SoapUITests/SCA-CI-Test-soapui-project.xml</projectFile>
+          <outputFolder>${basedir}/reports</outputFolder>
+          <junitReport>true</junitReport>
+          <printReport>false</printReport>
+        </configuration>
+        <executions>
+          <execution>
+            <id>SoapUITests</id>
+            <goals>
+              <goal>test</goal>
+            </goals>
+            <phase>test</phase>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
+  <distributionManagement>
+    <repository>
+      <uniqueVersion>false</uniqueVersion>
+      <id>releases</id>
+      <url>http://localhost:8081/repository/maven-releases/</url>
+    </repository>
+    <snapshotRepository>
+      <uniqueVersion>false</uniqueVersion>
+      <id>snapshots</id>
+      <url>http://localhost:8081/repository/maven-snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
 </project>
