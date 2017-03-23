@@ -29,6 +29,16 @@
       <enabled>false</enabled>
     </snapshots>
     <url>https://maven.oracle.com</url>
+  </repository>
+  <repository>
+    <id>local-nexus</id>
+    <releases>
+      <enabled>true</enabled>
+    </releases>
+    <snapshots>
+      <enabled>true</enabled>
+    </snapshots>
+    <url>http://localhost:8081/repository/public</url>
     <layout>default</layout>
   </repository>
 </repositories>
@@ -36,6 +46,10 @@
   <pluginRepository>
     <id>maven.oracle.com</id>
     <url>https://maven.oracle.com</url>
+  </pluginRepository>
+  <pluginRepository>
+    <id>local-nexus</id>
+    <url>http://localhost:8081/repository/public</url>
   </pluginRepository>
 </pluginRepositories>
 </project>
