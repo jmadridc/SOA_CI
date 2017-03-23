@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.oracle</groupId>
+  <artifactId>CIforSOADemo</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <modules>
+    <!-- Add project modules -->
+    <module>Approval</module>
+  </modules>  
+    <scm>
+        <connection>scm:git:https://github.com/jmadridc/SOA_CI.git</connection>
+        <url>https://github.com/jmadridc/SOA_CI.git</url>
+        <developerConnection>scm:git:https://github.com/jmadridc/SOA_CI.git</developerConnection>
+        <tag>1.0</tag>
+    </scm>
+    <developers>
+        <developer>
+            <name>Javier Madrid</name>
+            <email>javier.luciano.madrid@oracle.com</email>
+        </developer>
+    </developers>
+  <distributionManagement>
+    <repository>      
+      <uniqueVersion>false</uniqueVersion>
+      <id>releases</id>
+      <url>http://localhost:8081/repository/maven-releases/</url>
+    </repository>
+    <snapshotRepository>
+      <uniqueVersion>false</uniqueVersion>
+      <id>snapshots</id>
+      <url>http://localhost:8081/repository/maven-snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+</project>
