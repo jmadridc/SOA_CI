@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <property name="jndi.properties.input" value="D:\JDeveloper\mywork\CIforSOADemo/Approval/jndi.properties"/>
+  <property name="scatest.input" value="Approval"/>
+  <property name="scatest.format" value="junit"/>
+  <property name="scatest.result" value="reports"/>
+  <ant antfile="D:\Oracle\Middleware\SOA_Suite_12_2_1_Home/soa/bin/ant-sca-test.xml" dir="D:\Oracle\Middleware\SOA_Suite_12_2_1_Home/soa/bin" target="test"/>
+</target>
+</project>
