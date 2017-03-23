@@ -41,7 +41,7 @@
         <executions>
           <execution>
             <id>sca-test</id>
-            <phase>deploy</phase>
+            <phase>verify</phase>
             <configuration>
               <target>
                 <property name="jndi.properties.input" value="${basedir}/Approval/jndi.properties" />
