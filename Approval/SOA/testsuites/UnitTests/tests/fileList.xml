@@ -2,4 +2,5 @@
 <properties>
   <entry key="ReplySuccess.xml"/>
   <entry key="ForceFailure.xml"/>
+  <entry key="NewTest.xml"/>
 </properties>
